@@ -1,0 +1,6 @@
+framework module SSIconFont {
+  umbrella header "SSIconFont-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - SSIconFont (0.1.0)
+
+DEPENDENCIES:
+  - SSIconFont (from `../`)
+
+EXTERNAL SOURCES:
+  SSIconFont:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SSIconFont: b3496003852112924fce24e8755209ba42e1d9a0
+
+PODFILE CHECKSUM: 20d8524b6d32be3f1732bf5b1ae0239bb738200f
+
+COCOAPODS: 1.8.4
