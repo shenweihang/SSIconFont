@@ -1,20 +1,60 @@
 # SSIconFont
 
-[![CI Status](https://img.shields.io/travis/shenweihang/SSIconFont.svg?style=flat)](https://travis-ci.org/shenweihang/SSIconFont)
-[![Version](https://img.shields.io/cocoapods/v/SSIconFont.svg?style=flat)](https://cocoapods.org/pods/SSIconFont)
-[![License](https://img.shields.io/cocoapods/l/SSIconFont.svg?style=flat)](https://cocoapods.org/pods/SSIconFont)
-[![Platform](https://img.shields.io/cocoapods/p/SSIconFont.svg?style=flat)](https://cocoapods.org/pods/SSIconFont)
+## 使用方式
 
-## Example
+一、配置iconfont
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+ ![image](https://github.com/shenweihang/SSIconFont/raw/master/ScreenShots/1582596434543.jpg)
 
-## Requirements
+二、iconfont使用
 
-## Installation
+```
+#import "SSViewController.h"
+#import "SSIconFont.h"
 
-SSIconFont is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+@interface SSViewController ()
+
+@end
+
+@implementation SSViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.navigationItem.title = @"Icon Font";
+    [self initialUI];
+    
+}
+
+- (void)initialUI {
+    
+    UILabel *lbl = SSIconLabelMake(@"\U0000e624", [UIColor blueColor], 40);
+    lbl.frame = CGRectMake(0, 100, 40, 40);
+    [self.view addSubview:lbl];
+    
+    UILabel *lbl2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 50, 50)];
+    [lbl2 ss_setIconLabelWithInfo:SSIconInfoMake(@"\U0000e624", [UIColor blackColor], 50)];
+    [self.view addSubview:lbl2];
+    
+    UILabel *lbl3 = [[UILabel alloc] initWithFrame:CGRectMake(0, 210, 60, 60)];
+    lbl3.text = @"\U0000e624";
+    lbl3.textColor = [UIColor grayColor];
+    lbl3.font = [SSIconFont fontWithSize:60];
+    [self.view addSubview:lbl3];
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 280, 60, 60)];
+    imgView.image = SSIconImageMake(@"\U0000e624", [UIColor redColor], 60);
+    [self.view addSubview:imgView];
+}
+
+@end
+```
+三、iconfont的Unicode命名
+
+在代码中使用的时候需要将Unicode进行转换，如 &#xe61c 转换后: \U0000e61c
+
+
+## 安装
 
 ```ruby
 pod 'SSIconFont'
